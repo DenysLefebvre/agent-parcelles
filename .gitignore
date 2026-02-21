@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env
+
+# Données géospatiales
+*.geojson
+*.gpkg
+*.tif
+*.tiff
+*.shp
+*.dbf
+*.prj
+*.shx
+*.csv
+*.sqlite
+*.db
+
+# Caches et fichiers système
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
