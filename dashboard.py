@@ -5,14 +5,14 @@ from streamlit_folium import folium_static
 import folium
 
 # Chemin absolu vers le fichier GeoJSON
-file_path = os.path.join(os.getcwd(), "data", "parcelles.geojson")
+file_path = "/workspaces/agent-parcelles/data/parcelles.geojson"
 
 # Charger les données
 if os.path.exists(file_path):
     data = gpd.read_file(file_path)
     st.success(f"✅ Données chargées depuis {file_path}")
 else:
-    st.warning(f"⚠️ Fichier introuvable : {file_path}. Utilisation de données fictives.")
+    st.error(f"❌ Fichier introuvable : {file_path}")
     from shapely.geometry import Polygon
     data = gpd.GeoDataFrame(
         geometry=[
@@ -29,4 +29,3 @@ folium_static(m)
 
 # Afficher les données
 st.write(f"Nombre de parcelles : {len(data)}")
-st.dataframe(data)
