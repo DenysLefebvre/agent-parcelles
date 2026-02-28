@@ -5,7 +5,7 @@ from streamlit_folium import folium_static
 import folium
 
 # Chemin absolu vers le fichier GeoJSON
-file_path = "/workspaces/agent-parcelles/data/parcelles.geojson"
+file_path = os.path.join(os.path.dirname(__file__), 'data', 'parcelles.geojson')
 
 # Charger les données
 if os.path.exists(file_path):
@@ -17,7 +17,6 @@ else:
     data = gpd.GeoDataFrame(
         geometry=[
             Polygon([(7.26, 43.70), (7.27, 43.70), (7.27, 43.71), (7.26, 43.71)]),
-            Polygon([(7.25, 43.70), (7.26, 43.70), (7.26, 43.71), (7.25, 43.71)])
         ],
         crs="EPSG:4326"
     )
